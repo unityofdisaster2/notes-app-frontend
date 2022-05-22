@@ -1,0 +1,69 @@
+<div class="row">
+    <div class="col"></div>
+    <div class="col-lg">
+        <div class="card">
+            <div class="card-body">
+                <form [formGroup]="noteForm" (ngSubmit)="guardarNota()">
+                    <div class="form-group">
+                        <select 
+                            class="custom-select"
+                            [class.is-invalid]="creadorNoValido()"
+                            formControlName="creador">
+                            <!--  -->
+                            <option 
+                                *ngFor="let user of listaNombres; let idx = index;"
+                                [value]="user.nombre"
+                                class="form-control"
+                                >{{ user.nombre }}</option>
+                        </select>
+                        <small 
+                            class="text-danger"
+                            *ngIf="creadorNoValido()"
+                            >Se debe seleccionar un usuario</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="title">Title</label>
+                        <input 
+                            type="text"
+                            class="form-control"
+                            maxlength="30"
+                            [class.is-invalid]="tituloNoValido()"
+                            formControlName="titulo">
+                            <small class="text-danger" *ngIf="tituloNoValido()">El titulo es obligatorio</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="informacion">Contenido</label>
+                        <input 
+                            type="textarea" 
+                            class="form-control"
+                            [class.is-invalid]="infoNoValida()"
+                            maxlength="100"
+                            formControlName="informacion">
+                            <small class="text-danger" *ngIf="infoNoValida()">El contenido es obligatorio</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="fecha">Fecha</label>
+                        <input 
+                            type="date"
+                            class="form-control"
+                            [class.is-invalid]="fechaNoValida()"
+                            formControlName="fecha">
+                            <small class="text-danger" *ngIf="fechaNoValida()">La fecha es obligatoria</small>
+                    </div>                    
+                    <button 
+                        type="submit" 
+                        class="btn btn-primary" 
+                        *ngIf="!noteToEdit">Guardar</button>
+
+                    <button 
+                        type="submit" 
+                        class="btn btn-primary" 
+                        *ngIf="noteToEdit"
+                        >Editar</button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+    <div class="col"></div>
+</div>

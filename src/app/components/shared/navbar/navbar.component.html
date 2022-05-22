@@ -1,0 +1,30 @@
+<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+
+
+    <a class="navbar-brand" href="#">
+        <img src="assets/img/notes.svg" width="30" height="30" alt="">
+    </a> 
+
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <!-- active es la clase es para que el color de la fuente del link se vea mas claro-->
+            <li class="nav-item" routerLinkActive="active">
+                <a class="nav-link" [routerLink]="['notes']">Notes</a>
+            </li>
+            <li class="nav-item" routerLinkActive="active">
+                <a class="nav-link" [routerLink]="['note']">Create Note</a>
+            </li>
+            <li class="nav-item" routerLinkActive="active">
+                <a class="nav-link" [routerLink]="['user']">Create User</a>
+            </li>
+
+
+        </ul>
+    </div>
+</nav>

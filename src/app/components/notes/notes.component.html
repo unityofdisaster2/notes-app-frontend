@@ -1,0 +1,49 @@
+<div class="card-columns">
+    <div *ngFor="let note of noteArray; index as i" class="card border-dark mb-3" style="max-width: 18rem;">
+        <div class="card-header">
+            <div class="row">
+                <div class="col-9">
+                    {{note.titulo}}
+                </div>
+                <div class="col-3">
+                    <button class="btn btn-success" (click)="editarNota(i)">
+                        edit
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="card-body note-body">
+            <div class="col">
+                <div class="row">
+                    <div class="container">
+                        <p class="card-text">
+                            {{note.informacion}}
+                        </p>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <p class="card-text">
+                        {{note.nombreCreador}}
+                    </p>
+                </div>
+                <hr>
+                <div class="row">
+                    <p class="card-text">
+                        {{note.fecha | date:'dd-MMM-yyyy':'UTC'}}
+
+                    </p>
+                </div>
+                <hr>
+            </div>
+
+        </div>
+        <div class="card-footer">
+            <div class="row">
+                <div class="col">
+                    <button class="btn btn-danger" (click)="eliminarNota(i)">delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

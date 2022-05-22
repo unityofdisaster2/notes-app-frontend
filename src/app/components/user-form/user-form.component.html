@@ -1,0 +1,30 @@
+<div class="row">
+    <div class="col-lg" style="margin-bottom: 20px;">
+        <div class="card">
+            <div class="card-body">
+                <form [formGroup]="userForm" (ngSubmit)="guardarRegistro()">
+                    <div class="form-group">
+                        <label for="nombre">Create new User</label>
+                        <input type="text" 
+                            class="form-control"
+                            [class.is-invalid]="nombreNoValido()"
+                            maxlength="30"
+                            formControlName="nombre">
+                        <small *ngIf="nombreNoValido()" class="text-danger">
+                            El campo nombre es obligatorio
+                        </small>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Guardar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <ul class="list-group">
+            <li class="list-group-item" *ngFor="let user of listaUsuarios">{{user.nombre}}</li>
+
+        </ul>
+
+    </div>
+</div>

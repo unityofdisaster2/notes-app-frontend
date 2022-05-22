@@ -1,0 +1,24 @@
+hr{
+    border: 0.5px solid #DD864D;
+}
+
+
+.card-body{
+    background-color: #FFAF3E;
+}
+
+
+.card-body .card-text{
+    color: #000000;
+}
+
+
+.card-header{
+    background-color:#364955;
+    color:white
+}
+
+.card-footer{
+    background-color:#364955;
+    color:white
+}
