@@ -52,7 +52,7 @@ export class NoteService {
 
     return this.http.delete(`${apiURL}/notes/${id}`, {observe: 'response'}).pipe(
       map((response: any) => {
-        if (response.status == 200) {
+        if (response.status === 200) {
           return true;
         } else {
           return false;
@@ -64,7 +64,7 @@ export class NoteService {
   updateNote(nota: NotaInterface) {
     return this.http.put(`${apiURL}/notes/${nota.id}`, nota, {observe: 'response'}).pipe(
       map((response: any) => {
-        if (response.status == 200) {
+        if (response.status === 200) {
           return true;
         } else {
           return false;
